@@ -13,11 +13,12 @@ import copy
 import utils
 import train_model
 import eval_model
+import model_config
 
 
 
-para_name = 'd'
-configs = utils.set_config(para_name)
+para_name = 'B'
+configs = model_config.set_config(para_name)
 num_weight = utils.get_weight_num(configs, para_name)
 result = utils.result(para_name, configs[para_name], num_weight, configs['iter_time'])
 
@@ -39,7 +40,6 @@ for i,hyper_para in enumerate(configs[para_name]):
                                 result = result,
                                 index = (i, k, num_weight))
            
-
 
 pre_text = 'MNIST_' + para_name
 io.savemat('./Visualization/{}_result.mat'.format(pre_text),{'{}_result'.format(pre_text):result})

@@ -1,8 +1,8 @@
 clear;
-load('MNIST_d_result.mat');
+load('MNIST_B_result.mat');
 
-para_name = '$d$';
-res = MNIST_beta_result;
+para_name = '$B$';
+res = MNIST_B_result;
 figure;
 thresholds = plot_loss(res.loss1, res.sigma_g, res.para, para_name);
  
